@@ -203,45 +203,50 @@ const TransactionHistory = ({ transactions }) => {
                                
                                 
                                 {filteredTransactions.length > 0 && (
-                                    <div className="md:flex md:gap-2 sm:flex space-y-2 no-print">
-                                       <button
-                                    onClick={() => setShowFilters(!showFilters)}
-                                    className="flex items-center justify-center px-3 py-1.5 bg-purple-600 hover:bg-purple-700 text-white rounded-md text-sm transition-colors"
-                                >
-                                    <FaFilter className="mr-1" /> Filters
-                                </button>
-                                        <button
-                                            onClick={exportToExcel}
-                                            className="flex items-center uppercase px-3 py-1.5 bg-green-600 hover:bg-green-700 text-white rounded-md text-sm transition-colors"
-                                            title="Export to Excel"
-                                        >
-                                            <FaFileExcel className="mr-1" /> Excel
-                                        </button>
+                                  <div className="flex flex-wrap gap-2 p-1 no-print">
+  {/* Filters Button - Full width on mobile, auto on desktop */}
+  <button
+    onClick={() => setShowFilters(!showFilters)}
+    className="flex flex-1 md:flex-none items-center justify-center px-3 py-1.5 bg-purple-600 hover:bg-purple-700 text-white rounded-md text-sm transition-colors min-w-[120px]"
+  >
+    <FaFilter className="mr-1" /> Filters
+  </button>
 
-                                        <button
-                                            onClick={exportToCSV}
-                                            className="flex items-center px-3 py-1.5 bg-amber-600 hover:bg-amber-700 text-white rounded-md text-sm transition-colors"
-                                            title="Export to Excel"
-                                        >
-                                            <FaFileCsv className="mr-1" /> CSV
-                                        </button>                  
-                                        
-                                        <button
-                                            onClick={handlePrint}
-                                            className="flex items-center uppercase px-3 py-1.5 bg-yellow-600 hover:bg-yellow-700 text-white rounded-md text-sm transition-colors"
-                                            title="Print"
-                                        >
-                                            <FaPrint className="mr-1" /> Print
-                                        </button>
-                                        
-                                        <button
-                                            onClick={copyTableToClipboard}
-                                            className="flex items-center uppercase px-3 py-1.5 h-fit bg-blue-600 hover:bg-blue-700 text-white rounded-md text-sm transition-colors"
-                                            title="Copy to clipboard"
-                                        >
-                                            <FaCopy className="mr-1" /> Copy
-                                        </button>
-                                    </div>
+  {/* Action Buttons - Wrap on mobile, inline on desktop */}
+  <div className="flex flex-1 flex-wrap gap-2">
+    <button
+      onClick={exportToExcel}
+      className="flex flex-1 md:flex-none items-center justify-center px-3 py-1.5 bg-green-600 hover:bg-green-700 text-white rounded-md text-sm transition-colors min-w-[100px]"
+      title="Export to Excel"
+    >
+      <FaFileExcel className="mr-1" /> Excel
+    </button>
+
+    <button
+      onClick={exportToCSV}
+      className="flex flex-1 md:flex-none items-center justify-center px-3 py-1.5 bg-amber-600 hover:bg-amber-700 text-white rounded-md text-sm transition-colors min-w-[100px]"
+      title="Export to CSV"
+    >
+      <FaFileCsv className="mr-1" /> CSV
+    </button>
+
+    <button
+      onClick={handlePrint}
+      className="flex flex-1 md:flex-none items-center justify-center px-3 py-1.5 bg-yellow-600 hover:bg-yellow-700 text-white rounded-md text-sm transition-colors min-w-[100px]"
+      title="Print"
+    >
+      <FaPrint className="mr-1" /> Print
+    </button>
+
+    <button
+      onClick={copyTableToClipboard}
+      className="flex flex-1 md:flex-none items-center justify-center px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-md text-sm transition-colors min-w-[100px]"
+      title="Copy to clipboard"
+    >
+      <FaCopy className="mr-1" /> Copy
+    </button>
+  </div>
+</div>
                                 )}
                             </div>
                         </div>
