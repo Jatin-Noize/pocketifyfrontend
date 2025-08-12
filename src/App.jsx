@@ -8,14 +8,14 @@ import BudgetForm from "./components/BudgetForm";
 import BudgetOverview from "./components/BudgetOverview";
 import Home from "./components/Home";
 import CategoryPieChart from './components/CategoryPieChart';
-import SignUp from "./components/SignUp";
-import Login from "./components/Login";
+import SignUp from "./components/Signup";
+import Login from "./components/LogIn";
 import axios from "axios";
 import FinanceDashboard from "./components/FinanceDashboard";
 
 
 
-const API_URL = "http://localhost:5000";
+const API_URL = "http://localhost:5000" || "https://pocketifybackend.onrender.com";
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token"));
